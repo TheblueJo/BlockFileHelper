@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>BlockHelperTool</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="">
+    <script src="scripts/Defining.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/FileTemplates.js"></script>
+</head>
+<body>
+    <form>
+        <label for="fileType">File needed:</label><br>
+        <select name="fileType" id="fileType" onchange="changeTemplate()">
+            <option value="terrain_texture.json">terrain_texture.json</option>
+            <option value="blocks.json">blocks.json</option>
+            <option value="flipbook_textures.json">flipbook_textures.json</option>
+            <option value="full">All Files</option>
+        </select>
+        <p id="onetime">Select another file to get started!</p>
+        <br>
+        <br>
+        <div id="cOF">
+        </div>
+    </form>
+    <br>
+    <div>
+        <button onclick="sampleFile()" id="dbns"> Empty file format </button>
+    </div>
+    <br>
+    <div>
+        <button onclick="sampleFile()" id="dbn"> Filled file format </button>
+    </div>
+</body>

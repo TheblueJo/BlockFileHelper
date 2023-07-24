@@ -27,7 +27,8 @@ function filledFile() {
   } else {
     let all = setDownloadValues();
     downloadFile(JSON.stringify(all[0]), "terrain_texture.json");
-    downloadFile(JSON.stringify(all[1]), "flipbook_textures.json");
+    downloadFile(JSON.stringify(all[1]), "blocks.json");
+    downloadFile(JSON.stringify(all[2]), "flipbook_textures.json");
   }
 }
 
@@ -100,7 +101,33 @@ function setDownloadValues() {
     downloadFile2[0].frames = stringToNumArray(dataFrameOrder);
     downloadFile2[0].ticks_per_frame = parseInt(dataTicks);
 
-    let output = [downloadFile1, downloadFile2];
+    let dataTUp = document.getElementById("fblockfaceUP").value;
+    let dataTDOWN = document.getElementById("fblockfaceDOWN").value;
+    let dataTNORTH = document.getElementById("fblockfaceNORTH").value;
+    let dataTEAST = document.getElementById("fblockfaceEAST").value;
+    let dataTSOUTH = document.getElementById("fblockfaceSOUTH").value;
+    let dataTWEST = document.getElementById("fblockfaceWEST").value;
+    var downloadFile3 = fileTypesTemplates["blocks.json"];
+
+    let receive3 =
+      '{"' +
+      dataName +
+      '":{"textures": {"up":"' +
+      dataTUp +
+      '","down":"' +
+      dataTDOWN +
+      '","north":"' +
+      dataTNORTH +
+      '","east":"' +
+      dataTEAST +
+      '","south":"' +
+      dataTSOUTH +
+      '","west":"' +
+      dataTWEST +
+      '"}}}';
+    downloadFile3.DONOTREADTHIS = JSON.parse(receive3);
+
+    let output = [downloadFile1,downloadFile3.DONOTREADTHIS, downloadFile2];
     return output;
   }
 }

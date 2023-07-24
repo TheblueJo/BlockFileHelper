@@ -53,6 +53,35 @@ function setDownloadValues() {
     downloadFile2[0].frames = stringToNumArray(dataFrameOrder);
     downloadFile2[0].ticks_per_frame = parseInt(dataTicks);
     return downloadFile2;
+  } else if (sd == "blocks.json") {
+    let dataName = document.getElementById("ftexturedef").value;
+    let dataTUp = document.getElementById("fblockfaceUP").value;
+    let dataTDOWN = document.getElementById("fblockfaceDOWN").value;
+    let dataTNORTH = document.getElementById("fblockfaceNORTH").value;
+    let dataTEAST = document.getElementById("fblockfaceEAST").value;
+    let dataTSOUTH = document.getElementById("fblockfaceSOUTH").value;
+    let dataTWEST = document.getElementById("fblockfaceWEST").value;
+    var downloadFile3 = fileTypesTemplates["blocks.json"];
+
+    let receive3 =
+      '{"' +
+      dataName +
+      '":{"textures": {"up":"' +
+      dataTUp +
+      '","down":"' +
+      dataTDOWN +
+      '","north":"' +
+      dataTNORTH +
+      '","east":"' +
+      dataTEAST +
+      '","south":"' +
+      dataTSOUTH +
+      '","west":"' +
+      dataTWEST +
+      '"}}}';
+    downloadFile3.DONOTREADTHIS = JSON.parse(receive3);
+
+    return downloadFile3.DONOTREADTHIS;
   } else if (sd == "full") {
     let dataName = document.getElementById("ftexturedef").value;
     let dataPath = document.getElementById("ftexturepath").value;

@@ -2,12 +2,14 @@
 <head>
     <title>BlockHelperTool</title>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="">
+    <link rel="stylesheet" href="./styles/style.css">
     <script src="scripts/Defining.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/FileTemplates.js"></script>
 </head>
 <body>
+    <h1>BlockHelperTool</h1>
+    <br>
     <form>
         <label for="fileType">File needed:</label><br>
         <select name="fileType" id="fileType" onchange="changeTemplate()">
@@ -21,13 +23,23 @@
         <br>
         <div id="cOF">
         </div>
+        <div>
+            <button onclick="sampleFile()" id="dbns"> Empty file format </button>
+        </div>
+        <br>
+        <div>
+            <button onclick="filledFile()" id="dbn"> Filled file </button>
+        </div>
     </form>
     <br>
-    <div>
-        <button onclick="sampleFile()" id="dbns"> Empty file format </button>
-    </div>
-    <br>
-    <div>
-        <button onclick="sampleFile()" id="dbn"> Filled file format </button>
+    
+    <div id="infos">
+        <a href="./LICENSE">License</a>
+         - 
+        <a href="https://github.com/TheblueJo/BlockFileHelper/releases">Original download and other releases</a>
+         - 
+        <a href="./README.md">README-file</a>
+         - 
+        <a>version 0.2.1 by <a href="https://github.com/TheblueJo">@TheblueJo</a></a>
     </div>
 </body>
